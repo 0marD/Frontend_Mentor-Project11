@@ -1,0 +1,417 @@
+:root {
+  /* ## Colors ## */
+  /* -- Primary -- */
+  /* - Text - */
+  --Pale-Violet: hsl(276, 100%, 81%);
+  --Moderate-Violet: hsl(276, 55%, 52%);
+  --Desaturated-Dark-Violet: hsl(271, 15%, 43%);
+  --Grayish-Blue: hsl(206, 6%, 79%);
+  --Dark-Grayish-Violet: hsl(270, 7%, 64%);
+  /* -- Gradients -- */
+  --Light-Magenta: hsl(293, 100%, 63%);
+  --Light-Violet: hsl(264, 100%, 61%);
+  /* -- Secondary -- */
+  --White: hsl(0, 0%, 100%);
+  --Light-Grayish-Violet: hsl(270, 20%, 96%);
+  --Very-Dark-Desaturated-Violet: hsl(271, 36%, 24%);
+  --Very-Light-Magenta: hsl(289, 100%, 72%);
+  /*  font size */
+  font-size: 15px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  max-width: 1440px;
+  height: 100vh;
+  font-family: "Rubik", sans-serif;
+  background-color: hsl(270, 20%, 96%, 0.5);
+  justify-content: center;
+  margin: auto;
+}
+
+.figure__purple {
+  width: 50%;
+  height: 50%;
+  background: linear-gradient(
+    to top,
+    hsl(264, 100%, 61%),
+    30%,
+    hsl(293, 100%, 63%)
+  );
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: -1;
+  border-radius: 0 0 100% 0;
+}
+
+.figure__gray {
+  width: 50%;
+  height: 50vh;
+  background-color: var(--Light-Grayish-Violet);
+  right: 0;
+  bottom: -10%;
+  position: absolute;
+  z-index: -1;
+  border-radius: 100% 0 0 0;
+  
+}
+
+.main {
+  width: 350px;
+  margin: 5em auto;
+  display: grid;
+  gap: 5em;
+  overflow: hidden;
+  padding: 0;
+  grid-template-areas:
+    "phone"
+    "description";
+  /* bottom: 10%; */
+}
+
+/*  phone */
+.phone {
+  width: 80%;
+  margin: auto;
+  background-color: var(--White);
+  border: 1.5em;
+  padding: 0.7em;
+  border-radius: 2em;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.phone__screen {
+  width: 100%;
+  margin: auto;
+  background-color: var(--Light-Grayish-Violet);
+  border-radius: 1.5em;
+}
+
+.screen__header {
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    hsl(264, 100%, 61%),
+    hsl(293, 100%, 63%)
+  );
+  display: flex;
+  flex-direction: row;
+  height: 6.5em;
+  position: relative;
+  border-radius: 1.5em 1.5em 0.5em 0.5em;
+  padding: 0.5em;
+}
+
+.screen__header::after {
+  content: "";
+  background-color: white;
+  border-radius: 0 0 1.1em 1.1em;
+  width: 70%;
+  height: 2em;
+  top: 0;
+  left: 15%;
+  position: absolute;
+}
+
+.phone__header--bottom {
+  height: 3em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: auto;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.icon__return {
+  margin: auto 0.5em;
+}
+
+.fa-solid,
+.fa-angle-left,
+.fa-solid,
+.fa-ellipsis-vertical {
+  color: white;
+  height: 1em;
+  cursor: pointer;
+}
+
+.profile__photo {
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  border: 1.5px solid var(--Grayish-Blue);
+  background-image: url("../images/avatar.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: auto 0;
+  margin-right: 0.5em;
+  cursor: pointer;
+}
+
+.profile__data {
+  margin: auto;
+  margin-left: 0;
+  color: var(--White);
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 2.3em;
+  cursor: pointer;
+}
+
+.name {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.status {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--Pale-Violet);
+}
+
+.options__icon {
+  margin: auto;
+  margin-right: 0.5em;
+}
+
+/* screen chat */
+.screen__chat {
+  width: 100%;
+  padding: 0.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.msg__received {
+  width: fit-content;
+  max-width: 60%;
+  padding: 0.7em;
+  margin: auto;
+  margin-left: 0;
+  background-color: hsl(270, 7%, 64%, 0.15);
+  color: hsl(289, 71%, 55%);
+  font-weight: 400;
+  font-size: 0.65rem;
+  border-radius: 1em;
+  border-bottom-left-radius: 0.3em;
+}
+
+.msg__send {
+  width: max-content;
+  max-width: 60%;
+  padding: 0.7em;
+  margin: auto;
+  margin-right: 0;
+  background-color: white;
+  color: var(--Very-Dark-Desaturated-Violet);
+  font-weight: 400;
+  font-size: 0.65rem;
+  border-radius: 1em;
+  border-bottom-left-radius: 0.3em;
+}
+
+.photos__send {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: none;
+  width: 70%;
+}
+
+.photo__send {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 4em;
+  height: 4em;
+  border-radius: 0.5em;
+}
+
+.photo__dog--1 {
+  background-image: url("../images/dog-image-1.jpg");
+}
+
+.photo__dog--2 {
+  background-image: url("../images/dog-image-2.jpg");
+}
+
+.photo__dog--3 {
+  background-image: url("../images/dog-image-3.jpg");
+}
+
+.msg__price {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: linear-gradient(
+    to left,
+    hsl(264, 100%, 61%),
+    hsl(293, 100%, 63%)
+  );
+  color: var(--Light-Grayish-Violet);
+  width: 75%;
+  padding: 1em;
+  margin: auto;
+  margin-left: 0;
+  font-weight: 400;
+  font-size: 0.6rem;
+  border-radius: 1em;
+  border-bottom-left-radius: 0.3em;
+}
+
+.circle {
+  width: 2em;
+  height: 2em;
+  border: 1px solid var(--White);
+  border-radius: 50%;
+  margin: auto 0;
+  margin-right: 1em;
+}
+
+.price {
+  color: var(--White);
+  font-weight: 700;
+  font-size: 1rem;
+  margin: auto;
+  margin-right: 0;
+}
+
+.chat__input {
+  width: 100%;
+  height: 2em;
+  position: relative;
+}
+
+.msg--input {
+  width: 100%;
+  border-radius: 2em;
+  font-size: 0.5rem;
+  padding: 1.6em;
+  border: none;
+  font-family: "Rubik", sans-serif;
+}
+
+.msg--input::placeholder {
+  color: var(--Grayish-Blue);
+}
+
+.input__send {
+  background-color: var(--Very-Dark-Desaturated-Violet);
+  color: white;
+  border-radius: 50%;
+  width: 1.7em;
+  height: 1.7em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0.3em;
+  right: 0.4em;
+  cursor: pointer;
+}
+
+/*  description */
+.description {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  border-radius: 1em;
+  border-bottom-left-radius: 0;
+  margin: auto;
+}
+
+.description__header {
+  text-align: center;
+  width: 100%;
+  color: var(--Very-Dark-Desaturated-Violet);
+  font-weight: 700;
+  font-size: 2.4rem;
+}
+
+.description__paragraph {
+  text-align: center;
+  width: 100%;
+  color: var(--Dark-Grayish-Violet);
+  line-height: 1.5;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+@media screen and (min-width: 767px) {
+  :root {
+    font-size: 13px;
+  }
+
+  body {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    position: relative;
+  }
+
+  .figure__purple {
+    height: 80vh;
+    width: 40%;
+    border-radius: 0 0 15em 15em;
+  }
+
+  .figure__gray {
+    height: 100vh;
+    width: 40%;
+    border-radius: 15em 15em 0 0;
+    bottom: -10em;
+  }
+
+  .main {
+    width: 750px;
+    height: max-content;
+    grid-template-areas: "phone description";
+    grid-template-columns: 1fr 1.3fr;
+    align-items: center;
+    margin: auto;
+    padding: 5em;
+    gap: 5em;
+  }
+
+  .phone,
+  .description {
+    width: 100%;
+  }
+
+  .description__header,
+  .description__paragraph {
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  :root {
+    font-size: 17px;
+  }
+
+  .figure__purple {
+    width: 25%;
+  }
+
+  .figure__gray {
+    width: 25%;
+  }
+
+  .main {
+    width: 1000px;
+  }
+}
